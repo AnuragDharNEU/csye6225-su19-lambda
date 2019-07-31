@@ -52,8 +52,5 @@ jobs:
           name: AWS Lambda Update Function Code
           command: |
             echo "Hello AWS Lambda Update Function Code"
-            aws lambda update-function-code --function-name LambdaApp --region ${AWS_REGION} \
-            --s3-location bucket=${bucketName},key=csye6225-webapp_lambda-${CIRCLE_BUILD_NUM}.zip,bundleType=zip 
-            
-            
+            aws lambda update-function-code --function-name LambdaApp --region ${AWS_REGION} --s3-location bucket=${bucketName},key=csye6225-webapp_lambda-${CIRCLE_BUILD_NUM}.zip,bundleType=zip
             echo "code deployment complete"
