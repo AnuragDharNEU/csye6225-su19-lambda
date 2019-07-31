@@ -27,7 +27,7 @@ jobs:
             ls -al
             zip -r csye6225-webapp_lambda-${CIRCLE_BUILD_NUM}.zip webapp/target/webapp-1.0-SNAPSHOT.jar
             ls -al
-            mv csye6225-webapp-${CIRCLE_BUILD_NUM}.zip lambda_artifact/
+            mv csye6225-webapp_lambda-${CIRCLE_BUILD_NUM}.zip lambda_artifact/
             cd lambda_artifact
             ls -al
             pwd
