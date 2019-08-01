@@ -48,4 +48,11 @@ jobs:
           command: |
             cd lambda_artifact
             aws s3 cp csye6225-webapp_lambda.zip s3://${bucketName}
+      - run:
+          name: AWS Lambda Update Function Code
+          command: |
+            echo "Hello AWS Lambda Update Function Code"
+            aws lambda update-function-code --function-name MyLambdaFunction --region ${AWS_REGION} \
+            --zip-file fileb://./lambda_artifact/csye6225-webapp_lambda.zip
+            echo "code deployment complete"
       
