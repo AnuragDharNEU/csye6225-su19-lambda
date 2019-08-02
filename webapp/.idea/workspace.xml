@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37831102-7929-41a5-aae7-1582a2de90e5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../.circleci/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csye6225_lambda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/csye6225_lambda.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LogEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LogEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LogEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LogEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,14 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/LogEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="83" selection-start-line="83" selection-end-line="83" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="240">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -41,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="382">
-              <caret line="437" column="21" selection-start-line="437" selection-start-column="21" selection-end-line="437" selection-end-column="21" />
+              <caret line="424" column="21" selection-start-line="424" selection-start-column="21" selection-end-line="424" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -55,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
+            <state relative-caret-position="105">
+              <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -98,8 +88,8 @@
       <list>
         <option value="$PROJECT_DIR$/.idea/compiler.xml" />
         <option value="$PROJECT_DIR$/csye6225_lambda.iml" />
-        <option value="$PROJECT_DIR$/src/main/java/LogEvent.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/LogEvent.java" />
       </list>
     </option>
   </component>
@@ -216,12 +206,12 @@
       <workItem from="1564694461009" duration="1422000" />
       <workItem from="1564699735460" duration="706000" />
       <workItem from="1564700716294" duration="547000" />
-      <workItem from="1564701301354" duration="8758000" />
+      <workItem from="1564701301354" duration="12632000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44608000" />
+    <option name="totallyTimeSpent" value="48482000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -362,7 +352,7 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
-          <caret line="437" column="21" selection-start-line="437" selection-start-column="21" selection-end-line="437" selection-end-column="21" />
+          <caret line="424" column="21" selection-start-line="424" selection-start-column="21" selection-end-line="424" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -380,20 +370,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/LogEvent.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/LogEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>

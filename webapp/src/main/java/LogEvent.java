@@ -14,7 +14,7 @@ import com.amazonaws.services.simpleemail.model.*;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
+
 import java.util.Calendar;
 import java.util.UUID;
 
@@ -39,7 +39,7 @@ public class LogEvent implements RequestHandler<SNSEvent, Object> {
 
         //Creating ttl
         context.getLogger().log("Invocation started: " + timeStamp);
-    long now = Instant.now().getEpochSecond(); // unix time
+    long now = Calendar.getInstance().getTimeInMillis()/1000; // unix time
         long ttl = 60 * 15; // ttl set to 15 min
         long totalttl = ttl + now ;
 
