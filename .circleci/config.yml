@@ -17,6 +17,23 @@ jobs:
             cd ..
             pwd
       - run:
+          name: Zip Artifact
+          command: |
+            echo "Hello the current build number is ${CIRCLE_BUILD_NUM}"
+            pwd
+            ls -al
+            mkdir -p lambda_artifact
+            pwd
+            ls -al
+            mv webapp/target/webapp-1.0-SNAPSHOT.jar lambda_artifact/
+            ls -al
+            cd lambda_artifact
+            ls -al
+            pwd
+            cd ..
+            pwd
+            ls -al
+      - run:
           name: Install AWS CLI & Build Artifact
           command: |
             sudo apt-get update || sudo apt-get update
@@ -28,14 +45,13 @@ jobs:
       - run:
           name: Upload Lambda Artifact to S3
           command: |
-            pwd            
-            cd target 
+            cd lambda_artifact
             aws s3 cp webapp-1.0-SNAPSHOT.jar s3://${bucketName}
       - run:
           name: AWS Lambda Update Function Code
           command: |
             echo "Hello AWS Lambda Update Function Code"
             aws lambda update-function-code --function-name MyLambdaFunction --region ${AWS_REGION} \
-            --zip-file fileb://webapp-1.0-SNAPSHOT.jar
+            --zip-file fileb://./lambda_artifact/webapp-1.0-SNAPSHOT.jar
             echo "code deployment complete"
       
