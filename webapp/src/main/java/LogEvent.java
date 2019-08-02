@@ -1,3 +1,4 @@
+
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
@@ -10,9 +11,10 @@ import com.amazonaws.services.lambda.runtime.events.SNSEvent;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClientBuilder;
 import com.amazonaws.services.simpleemail.model.*;
-
+import org.json.JSONException;
+import org.json.JSONObject;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
+
 import java.util.Calendar;
 import java.util.UUID;
 
@@ -31,17 +33,25 @@ public class LogEvent implements RequestHandler<SNSEvent, Object> {
     public Object handleRequest(SNSEvent request, Context context) {
         String timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss").format(Calendar.getInstance().getTime());
 
-        String domainName = System.getenv("domainName");
-        from = "noreply@test." + domainName;
+        String Domain = System.getenv("DOMAIN_NAME");
+        context.getLogger().log("domain"+Domain);
+        from = "noreply@test." + Domain;
 
         //Creating ttl
         context.getLogger().log("Invocation started: " + timeStamp);
-        long now = Instant.now().getEpochSecond(); // unix time
-        long ttl = 60 * 15; // ttl set to 20 min
-        long totalttl = ttl + now;
+    long now = Calendar.getInstance().getTimeInMillis()/1000; // unix time
+        long ttl = 60 * 15; // ttl set to 15 min
+        long totalttl = ttl + now ;
 
         //Function Excecution for sending the email
-        username = request.getRecords().get(0).getSNS().getMessage();
+
+        try {
+            JSONObject body = new JSONObject(request.getRecords().get(0).getSNS().getMessage());
+            username=    body.getString("emailAddress");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         context.getLogger().log("Password reset request for username: "+username);
         token = UUID.randomUUID().toString();
         context.getLogger().log("Invocation completed: " + timeStamp);
@@ -64,7 +74,7 @@ public class LogEvent implements RequestHandler<SNSEvent, Object> {
                                         .withString("token", token)
                                         .withLong("ttl", totalttl)));
 
-                textBody = "http://" + domainName + "reset?email=" + username + "&token=" + token;
+                textBody = "http://" + Domain +  "reset?email=" + username + "&token=" + token;
                 context.getLogger().log("Text " + textBody);
                 htmlBody = "<h2>Email sent from Amazon SES</h2>"
                         + "<p>Please reset the password using the below link. " +
