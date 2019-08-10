@@ -74,7 +74,7 @@ public class LogEvent implements RequestHandler<SNSEvent, Object> {
                                         .withString("token", token)
                                         .withLong("ttl", totalttl)));
 
-                textBody = "http://" + Domain +  "reset?email=" + username + "&token=" + token;
+                textBody = "https://" + Domain +  "reset?email=" + username + "&token=" + token;
                 context.getLogger().log("Text " + textBody);
                 htmlBody = "<h2>Email sent from Amazon SES</h2>"
                         + "<p>Please reset the password using the below link. " +
